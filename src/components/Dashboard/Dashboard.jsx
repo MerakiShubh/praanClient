@@ -30,7 +30,7 @@ const Dashboard = () => {
   useEffect(() => {
     const connectToSSE = () => {
       const eventSource = new EventSource(
-        "http://localhost:5000/api/v1/data/real-time"
+        "https://praanserver.onrender.com/api/v1/data/real-time"
       );
 
       eventSource.onmessage = (event) => {
