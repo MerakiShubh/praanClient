@@ -2,7 +2,7 @@ import axios from "axios";
 import { store } from "../app/store";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:5000/api/v1",
+  baseURL: "https://praanserver.onrender.com/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
