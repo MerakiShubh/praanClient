@@ -69,7 +69,7 @@ export default function CreateUser() {
                   />
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  Acme Inc, Street, State, Postal Code
+                  PRAAN HQ, INDIA
                 </div>
               </div>
 
@@ -113,7 +113,7 @@ export default function CreateUser() {
                   />
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  info@acme.org
+                  careers@praan.io
                 </div>
               </div>
             </div>

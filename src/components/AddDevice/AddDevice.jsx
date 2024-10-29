@@ -17,7 +17,7 @@ const AddDevice = () => {
   const mutation = useMutation(addDevice, {
     onSuccess: () => {
       queryClient.invalidateQueries("devices");
-      navigate("/"); // Redirect on success
+      navigate("/");
     },
     onError: (error) => {
       console.error("Error adding device:", error.message);
@@ -73,7 +73,7 @@ const AddDevice = () => {
                   />
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  Acme Inc, Street, State, Postal Code
+                  PRAAN HQ, INDIA
                 </div>
               </div>
 
@@ -117,7 +117,7 @@ const AddDevice = () => {
                   />
                 </svg>
                 <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  info@acme.org
+                  careers@praan.io
                 </div>
               </div>
             </div>

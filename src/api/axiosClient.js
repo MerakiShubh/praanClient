@@ -15,13 +15,11 @@ axiosClient.interceptors.request.use(
       config.headers.Authorization = `Bearer ${auth.accessToken}`;
     } else {
       console.warn("No access token available for this request.");
-      // Optionally, handle token absence (e.g., redirect to login or show an error)
     }
 
     return config;
   },
   (error) => {
-    // Handle any error in the request setup
     return Promise.reject(error);
   }
 );

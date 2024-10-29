@@ -72,6 +72,12 @@ const Dashboard = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (!selectedDevice && Object.keys(deviceData).length > 0) {
+      setSelectedDevice(Object.keys(deviceData)[0]);
+    }
+  }, [deviceData, selectedDevice]);
+
   const handleTabClick = (deviceId) => {
     setSelectedDevice(deviceId);
   };
@@ -122,16 +128,17 @@ const Dashboard = () => {
             <button
               key={deviceId}
               onClick={() => handleTabClick(deviceId)}
-              className={`px-3 py-1 rounded-md ${
+              className={`px-4 py-2 font-medium ${
                 selectedDevice === deviceId
-                  ? "bg-blue-500 text-white font-semibold"
-                  : "bg-gray-200 text-gray-700"
+                  ? "border-b-2 border-black text-black"
+                  : "text-gray-600 hover:text-black"
               }`}
             >
               {deviceLabels[deviceId]}
             </button>
           ))}
         </div>
+
         <div className="h-96">
           {selectedDevice && deviceData[selectedDevice] ? (
             <>

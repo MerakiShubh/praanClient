@@ -12,14 +12,13 @@ const DataSwitcher = () => {
     () => getDeviceDataForDate(selectedDate),
     {
       keepPreviousData: true,
-      staleTime: 0, // Ensure cache is fresh each time
-      retry: false, // Prevent retries on 404
+      staleTime: 0,
+      retry: false,
     }
   );
 
   const handleDateChange = (newDate) => setSelectedDate(newDate);
 
-  // Check for 404 error and display custom message
   const pmValue = isLoading
     ? "Loading..."
     : error?.response?.status === 404
@@ -52,7 +51,7 @@ const DataSwitcher = () => {
                 .split("T")[0]
             )
           }
-          className="px-3 py-1 bg-gray-200 rounded-md hover:bg-gray-300"
+          className="px-3 py-1 text-white bg-slate-800 rounded-md hover:bg-slate-400 w-24"
         >
           Previous
         </button>
@@ -68,7 +67,7 @@ const DataSwitcher = () => {
                 .split("T")[0]
             )
           }
-          className="px-3 py-1 bg-gray-200 rounded-md hover:bg-gray-300"
+          className="px-3 py-1  text-white bg-slate-800 rounded-md hover:bg-slate-400 w-24"
         >
           Next
         </button>
@@ -81,7 +80,7 @@ const DataSwitcher = () => {
             onClick={() => setActivePM(pm)}
             className={`px-3 py-1 cursor-pointer rounded-md ${
               activePM === pm
-                ? "bg-blue-500 text-white font-semibold"
+                ? "bg-slate-800 hover:bg-slate-400 text-white font-semibold"
                 : "bg-gray-100 text-gray-700"
             }`}
           >
